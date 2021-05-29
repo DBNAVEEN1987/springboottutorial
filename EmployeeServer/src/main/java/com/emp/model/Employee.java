@@ -2,6 +2,7 @@ package com.emp.model;
 
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -26,7 +27,7 @@ public class Employee {
 	private String name;
 	@Column(name = "employee_age")
 	private Integer age;
-	@OneToMany(mappedBy = "employee")
+	@OneToMany(cascade=CascadeType.ALL, mappedBy = "employee")
 	private Set<Phone> phones;
 
 	public Integer getId() {
@@ -53,5 +54,14 @@ public class Employee {
 		this.age = age;
 	}
 
+	public Set<Phone> getPhones() {
+		return phones;
+	}
+
+	public void setPhones(Set<Phone> phones) {
+		this.phones = phones;
+	}
+	
+	
 
 }

@@ -12,8 +12,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import com.emp.model.Address;
 @SpringBootApplication
 // @EnableDiscoveryClient
-@ComponentScan(basePackages = { "com.emp.controller" })
-@EnableJpaRepositories(basePackages = { "com.emp.service" })
+@ComponentScan(basePackages = { "com.*"})
+@EnableJpaRepositories(basePackages = { "com.emp.repository" })
 @EntityScan(basePackages = { "com.emp.model" })
 public class SpringBootstraper {
 

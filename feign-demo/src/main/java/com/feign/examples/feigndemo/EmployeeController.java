@@ -21,7 +21,7 @@ public class EmployeeController {
 	@GetMapping("/feign")
 	public String getDetails(){
 		String phone = phoneClient.getPhone();
-		return "feign-client: "+phone;
+		return "feign-client: "+phone+" : "+name;
 	}
 	@Bean
 	@LoadBalanced

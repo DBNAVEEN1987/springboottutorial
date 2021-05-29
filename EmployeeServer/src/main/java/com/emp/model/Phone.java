@@ -26,6 +26,7 @@ public class Phone {
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "employee_id")
 	private Employee employee;
+	
 	public Integer getId() {
 		return id;
 	}

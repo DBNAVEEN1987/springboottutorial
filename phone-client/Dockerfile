@@ -1,4 +1,6 @@
 FROM openjdk:8-jdk-alpine
 ARG JAR_FILE=target/*.jar
-COPY ${JAR_FILE} app.jar
-ENTRYPOINT ["java","-jar","/app.jar"]
+ARG ENV_PROP=HI_ENV
+COPY ${JAR_FILE} phone-client.jar
+ENV demoEnv=${ENV_PROP}
+ENTRYPOINT ["java","-jar","/phone-client.jar"]
